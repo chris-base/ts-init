@@ -1,0 +1,20 @@
+{
+  "name": "tester",
+  "version": "1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && node ./dist/js/bundle.js",
+    "build": "tsc --noEmit && node ./build/build.js",
+    "serve": "node ./build/serve.js",
+    "analyze": "node ./build/analyze.js",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "esbuild": "^0.25.9",
+    "eslint": "^9.35.0",
+    "typescript-eslint": "^8.42.0",
+    "vitest": "^3.2.4"
+  }
+}

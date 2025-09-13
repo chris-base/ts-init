@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "moduleResolution": "nodenext",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    /* not transpiling with TypeScript since we are using esbuild: */
+    "module": "NodeNext",
+    "noEmit": true,
+    "lib": [
+      "DOM",
+      "es2022"
+    ]
+  },
+  "include": [
+    "./src/*.ts"
+  ],
+  "exclude": [
+    "eslint.config.mjs",
+    "jest.config.ts"
+  ]
+}
