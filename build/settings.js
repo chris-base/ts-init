@@ -5,6 +5,10 @@ export function createBuildSettings(options) {
     entryPoints: ["src/index.ts"],
     outfile: "dist/js/bundle.js",
     bundle: true,
+    format: "esm",
+    // platform: "node",
+    // packages: "external",
+    //
     // plugins: [
     //   esbuildPluginTsc({
     //     force: true,

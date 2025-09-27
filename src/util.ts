@@ -25,3 +25,11 @@ export const randomString = (len: number, charSet?: string): string => {
   }
   return randomString;
 };
+
+export const replaceAt = (str: string, index: number, replacer: string): string => {
+  if (str.length - 1 < index || index < 0 || replacer.length !== 1) {
+    return str;
+  }
+
+  return str.substring(0, index) + replacer + str.substring(index + 1);
+};

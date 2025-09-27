@@ -10,23 +10,25 @@ const sseHandler = () => {
   });
 };
 
-const settings = createBuildSettings({
-  sourcemap: true,
-  banner: {
-    js: "(" + sseHandler.toString() + ")()",
-  },
-});
+(async () => {
+  const settings = createBuildSettings({
+    sourcemap: true,
+    banner: {
+      js: "(" + sseHandler.toString() + ")()",
+    },
+  });
 
-const ctx = await esbuild.context(settings);
+  const ctx = await esbuild.context(settings);
 
-await ctx.watch();
+  await ctx.watch();
 
-const { hosts, port } = await ctx.serve({
-  host: "127.0.0.1",
-  port: 1337,
+  const { hosts, port } = await ctx.serve({
+    host: "127.0.0.1",
+    port: 1337,
 
-  servedir: "dist",
-  fallback: "dist/index.html",
-});
+    servedir: "dist",
+    fallback: "dist/index.html",
+  });
 
-console.log(`Serving app at ${hosts}:${port}.`);
+  console.log(`Serving app at ${hosts}:${port}.`);
+})();

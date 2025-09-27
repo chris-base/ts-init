@@ -3,13 +3,14 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ESNext",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "moduleResolution": "nodenext",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
+    "noErrorTruncation": true,
     /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
@@ -17,16 +18,17 @@
     /* not transpiling with TypeScript since we are using esbuild: */
     "module": "NodeNext",
     "noEmit": true,
+    "allowImportingTsExtensions": true,
+    /**/
     "lib": [
       "DOM",
-      "es2022"
+      "ESNext"
     ]
   },
   "include": [
     "./src/*.ts"
   ],
   "exclude": [
-    "eslint.config.mjs",
-    "jest.config.ts"
+    "eslint.config.mjs"
   ]
 }
